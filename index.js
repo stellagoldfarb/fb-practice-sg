@@ -1,14 +1,32 @@
 // import our restuarnts
-const restuarnts = require('./restaurants.json')
+const restuarants = require("./restaurants.json");
 
-// import a set of tools to talk to firebase and Firestore
+//import a set of tools to talk to firebase and Firestore
+const {
+  initializeApp,
+  cert,
+} = require("firebase-admin/app");
+const { getFirestore } = require("firebase-admin/firestore");
 
-//connect
+// import our credentials
+const credentials = require("./credentials.json");
+// const { initializeApp } = require("firebase-admin");
 
-console.log(restuarnts[0].name)
+// connect to firebase services
+initializeApp({
+  credential: cert(credentials)
+});
 
 // connect to firestore
+const db = getFirestore();
 
 // create a collection called "restaurants"
-
-// add each restaurant
+// adde each restaurant
+db.collection("restaurants")
+  .add(restuarants[0])
+  .then((doc) => {
+    console.log("Added restaurant", doc.id);
+  })
+  .catch((err) => {
+    console.error(err);
+  });

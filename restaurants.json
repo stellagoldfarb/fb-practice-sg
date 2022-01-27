@@ -1,21 +1,26 @@
-{
-    "name": "fb-practice-sg",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+[
+    {
+      "name": "Bolay",
+      "location": "Boca Raton FL",
+      "type": "Healthy American",
+      "price": "$$"
     },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/stellagoldfarb/fb-practice-sg.git"
+    {
+      "name": "McDonald's",
+      "location": "Boca Raton FL",
+      "type": "American Fast Food",
+      "price": "$"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/stellagoldfarb/fb-practice-sg/issues"
+    {
+      "name": "3 Natives",
+      "location": "Boca Raton FL",
+      "type": "Healthy American",
+      "price": "$$"
     },
-    "homepage": "https://github.com/stellagoldfarb/fb-practice-sg#readme"
-  }
-  
+    {
+      "name": "Table 26",
+      "location": "West Palm Beach FL",
+      "type": "Americano",
+      "price": "$$$$"
+    }
+  ]
