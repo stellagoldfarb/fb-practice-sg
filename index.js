@@ -21,12 +21,41 @@ initializeApp({
 const db = getFirestore();
 
 // create a collection called "restaurants"
-// adde each restaurant
-db.collection("restaurants")
-  .add(restuarants[0])
-  .then((doc) => {
-    console.log("Added restaurant", doc.id);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+const restRef = db.collection('restaurants')
+
+
+//add each restaurant
+restRef.add(restuarants[3])
+ .then((doc) => {
+ console.log("Added restaurant", doc.id);
+})
+.catch((err) => {
+  console.error(err);
+});
+
+// read one document
+restRef.doc('WcvWvg0yYiKBbctqKE8u').get()
+ .then(doc => {
+   console.log(doc.id, ' =>', doc.data());
+})
+ .catch(err => comsole.error);
+
+// get all documents
+restRef.get()
+ .then (snapshot => {
+  snapshot.forEach(doc => {
+          console.log(doc.id, ' => ', doc.data());
+   })
+})
+ .catch(console.error);
+
+  // find a document(s)
+  //querying a collection
+restRef.where('name','==','Bolay').get()
+.then(snapshot => {
+    snapshot.forEach(doc => {
+        console.log(doc.data())
+    });
+})  
+.catch(console.error)
+
